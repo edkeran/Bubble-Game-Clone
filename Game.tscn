@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Arrow.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.513726, 0.447059, 0.447059, 1 )
+corner_detail = 11
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.337255, 0.447059, 0.533333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.752941, 0.639216, 0.639216, 1 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 319.619, 25 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10, 174.919 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 10.3456, 174.726 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 640.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FontWeaponPlayer" type="Panel" parent="Panel"]
+margin_top = 397.0
+margin_right = 640.0
+margin_bottom = 480.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="Panel/FontWeaponPlayer" instance=ExtResource( 1 )]
+position = Vector2( 320, 50 )
+
+[node name="Arrow" type="Sprite" parent="Panel"]
+position = Vector2( 322, 420 )
+texture = ExtResource( 3 )
+
+[node name="Bubbles" type="Panel" parent="Panel"]
+anchor_left = 0.002
+anchor_top = 0.108
+anchor_right = 0.00200005
+anchor_bottom = 0.108
+margin_left = -1.28
+margin_top = -0.84
+margin_right = 637.72
+margin_bottom = 346.16
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUBPlayer" type="Panel" parent="Panel"]
+margin_right = 640.0
+margin_bottom = 53.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/HUBPlayer"]
+margin_left = 1.0
+margin_top = 18.0
+margin_right = 57.0
+margin_bottom = 32.0
+text = "Puntaje: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/KinematicBody2D"]
+position = Vector2( 319, 27 )
+shape = SubResource( 4 )
+
+[node name="Paredes" type="KinematicBody2D" parent="Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Paredes"]
+position = Vector2( -9.32278, 225.028 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Panel/Paredes"]
+position = Vector2( 649.096, 223.985 )
+shape = SubResource( 6 )

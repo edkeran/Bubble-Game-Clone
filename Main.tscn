@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -2.49829
+margin_right = 636.502
+margin_bottom = 478.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -173.972
+margin_top = 4.74661
+margin_right = 17.0288
+margin_bottom = 20.7466
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0, 1, 0.345098, 1 )
+text = "Bubble Shoot Version LITE"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel"]
+anchor_left = 0.491
+anchor_top = 0.169
+anchor_right = 0.491
+anchor_bottom = 0.169
+margin_left = -123.871
+margin_top = 11.082
+margin_right = 122.129
+margin_bottom = 70.082
+text = "Iniciar Nueva Partida"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Panel"]
+anchor_left = 0.488
+anchor_top = 0.354
+anchor_right = 0.488
+anchor_bottom = 0.354
+margin_left = -120.334
+margin_top = 52.727
+margin_right = 121.666
+margin_bottom = 107.727
+text = "Salir"
+
+[node name="Button3" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.529
+anchor_right = 0.5
+anchor_bottom = 0.529
+margin_left = -125.5
+margin_top = 90.0533
+margin_right = 117.5
+margin_bottom = 146.053
+text = "Mas Informacion"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
